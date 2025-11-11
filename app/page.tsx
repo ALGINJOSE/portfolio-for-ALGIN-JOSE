@@ -205,7 +205,7 @@ export default function App() {
 
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.a
-                href="Algin Jose C Resume Reactjs.pdf"
+                href="Algin Jose C-resume.pdf"
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
