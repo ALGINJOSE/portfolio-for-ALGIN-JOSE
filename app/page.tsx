@@ -44,6 +44,15 @@ export default function App() {
             "Leveraged Next.js and Tailwind CSS for high-performance web pages",
             "Collaborated with design teams ensuring alignment with project goals and branding"
           ]
+        },
+        {
+          name: "ORFARM-GREEN E-Commerce",
+          tech: "HTML5, CSS3, Next.js, Tailwind CSS",
+          achievements: [
+            "Developed dynamic API-driven product listings and promotions",
+            "Built cart and Wishlist features with efficient state management",
+            "Created product details page with filters, sorting, and comprehensive data"
+          ]
         }
       ]
     },
@@ -59,15 +68,6 @@ export default function App() {
             "Developed and maintained ERP web applications with scalable frontend architecture",
             "Built reusable and modular components improving development speed",
             "Designed responsive UIs optimized for all devices (desktop, tablet, mobile)"
-          ]
-        },
-        {
-          name: "ORFARM-GREEN E-Commerce",
-          tech: "HTML5, CSS3, Next.js, Tailwind CSS",
-          achievements: [
-            "Developed dynamic API-driven product listings and promotions",
-            "Built cart and Wishlist features with efficient state management",
-            "Created product details page with filters, sorting, and comprehensive data"
           ]
         }
       ]
@@ -132,6 +132,18 @@ export default function App() {
       institution: "Scott Christian College, Nagercoil",
       period: "Jul 2018 - Apr 2021",
       grade: "CGPA 7.3"
+    },
+    {
+      degree: "Diploma in Financial Accounts & Tally ERP 9",
+      institution: "College of Career Studies, Marthandam",
+      period: "Jul 2022 - jan 2023",
+      grade: "95.75%"
+    },
+    {
+      degree: "Full Stack with Python Training",
+      institution: "Besant Technologies, Chennai",
+      period: "jan 2023 - sep 2023",
+      grade: "Completed"
     },
     {
       degree: "H.S.C",
