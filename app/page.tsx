@@ -1,10 +1,25 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDown, Phone, MessageCircle, Download, Mail, MapPin, Github, Linkedin, ExternalLink, Code, Briefcase, GraduationCap, Award, Sparkles } from 'lucide-react';
+"use client";
+import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  ArrowDown,
+  Phone,
+  MessageCircle,
+  Download,
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+  ExternalLink,
+  Code,
+  Briefcase,
+  GraduationCap,
+  Award,
+  Sparkles,
+} from "lucide-react";
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
@@ -15,8 +30,16 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'experience', 'projects', 'education', 'skills', 'contact'];
-      const current = sections.find(section => {
+      const sections = [
+        "hero",
+        "about",
+        "experience",
+        "projects",
+        "education",
+        "skills",
+        "contact",
+      ];
+      const current = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -26,8 +49,8 @@ export default function App() {
       });
       if (current) setActiveSection(current);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const experiences = [
@@ -42,8 +65,8 @@ export default function App() {
           achievements: [
             "Developed responsive landing pages to enhance user engagement and drive conversions",
             "Leveraged Next.js and Tailwind CSS for high-performance web pages",
-            "Collaborated with design teams ensuring alignment with project goals and branding"
-          ]
+            "Collaborated with design teams ensuring alignment with project goals and branding",
+          ],
         },
         {
           name: "ORFARM-GREEN E-Commerce",
@@ -51,10 +74,10 @@ export default function App() {
           achievements: [
             "Developed dynamic API-driven product listings and promotions",
             "Built cart and Wishlist features with efficient state management",
-            "Created product details page with filters, sorting, and comprehensive data"
-          ]
-        }
-      ]
+            "Created product details page with filters, sorting, and comprehensive data",
+          ],
+        },
+      ],
     },
     {
       company: "JM-ORIGIN Technosoft Pvt Ltd",
@@ -67,11 +90,11 @@ export default function App() {
           achievements: [
             "Developed and maintained ERP web applications with scalable frontend architecture",
             "Built reusable and modular components improving development speed",
-            "Designed responsive UIs optimized for all devices (desktop, tablet, mobile)"
-          ]
-        }
-      ]
-    }
+            "Designed responsive UIs optimized for all devices (desktop, tablet, mobile)",
+          ],
+        },
+      ],
+    },
   ];
 
   const projects = [
@@ -84,8 +107,8 @@ export default function App() {
       highlights: [
         "Built responsive static website with reusable components",
         "Designed and deployed on Vercel",
-        "Optimized for mobile, tablet, and desktop"
-      ]
+        "Optimized for mobile, tablet, and desktop",
+      ],
     },
     {
       title: "ORFARM-GREEN",
@@ -94,8 +117,8 @@ export default function App() {
       highlights: [
         "Dynamic product listings with API integration",
         "Cart and Wishlist with state management",
-        "Advanced filtering and sorting capabilities"
-      ]
+        "Advanced filtering and sorting capabilities",
+      ],
     },
     {
       title: "QuickAns.ai",
@@ -104,8 +127,8 @@ export default function App() {
       highlights: [
         "Responsive landing pages",
         "Reusable UI components",
-        "High-performance design"
-      ]
+        "High-performance design",
+      ],
     },
     {
       title: "Booking Mate",
@@ -114,16 +137,23 @@ export default function App() {
       highlights: [
         "Search and filter components",
         "Booking functionality",
-        "User-friendly interface"
-      ]
-    }
+        "User-friendly interface",
+      ],
+    },
   ];
 
   const skills = {
-    "Frontend": ["HTML5", "CSS3", "JavaScript", "TypeScript", "React.js", "Next.js"],
-    "Styling": ["Tailwind CSS", "Bootstrap", "Responsive Design"],
-    "Backend": ["Python (Basic)", "MySQL"],
-    "Tools": ["Git", "Vercel", "API Integration", "Agile Methodologies"]
+    Frontend: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+    ],
+    Styling: ["Tailwind CSS", "Bootstrap", "Responsive Design"],
+    Backend: ["Python (Basic)", "MySQL"],
+    Tools: ["Git", "Vercel", "API Integration", "Agile Methodologies"],
   };
 
   const education = [
@@ -131,26 +161,26 @@ export default function App() {
       degree: "B.Sc. Mathematics",
       institution: "Scott Christian College, Nagercoil",
       period: "Jul 2018 - Apr 2021",
-      grade: "CGPA 7.3"
+      grade: "CGPA 7.3",
     },
     {
       degree: "Diploma in Financial Accounts & Tally ERP 9",
       institution: "College of Career Studies, Marthandam",
       period: "Jul 2022 - jan 2023",
-      grade: "95.75%"
+      grade: "95.75%",
     },
     {
       degree: "Full Stack with Python Training",
       institution: "Besant Technologies, Chennai",
       period: "jan 2023 - sep 2023",
-      grade: "Completed"
+      grade: "Completed",
     },
     {
       degree: "H.S.C",
       institution: "Abraham Memorial HSS",
       period: "Jun 2017 - Mar 2018",
-      grade: "CGPA 7.4"
-    }
+      grade: "CGPA 7.4",
+    },
   ];
 
   return (
@@ -158,7 +188,7 @@ export default function App() {
       {/* Animated background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-linear-to-br from-emerald-950/20 via-black to-teal-950/20" />
-        <motion.div 
+        <motion.div
           className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
@@ -167,7 +197,7 @@ export default function App() {
           }}
           transition={{ duration: 20, repeat: Infinity }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
@@ -179,29 +209,34 @@ export default function App() {
       </div>
 
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         id="hero"
         className="relative min-h-screen flex items-center justify-center px-6"
         style={{ opacity, scale }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.1)_0%,transparent_70%)]" />
-        
+
         <div className="relative z-10 text-center max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <motion.div 
+            <motion.div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-8"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
               <Sparkles className="w-4 h-4 text-emerald-400" />
-              <span className="text-sm text-emerald-300">Available for opportunities</span>
+              <span className="text-sm text-emerald-300">
+                Available for opportunities
+              </span>
             </motion.div>
 
             <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
+              <div className="flex items-center justify-center">
+                <img className="border-4 border-[#00d5ae] rounded-full w-32 h-44" src="my_pic.jpg" alt="" />
+              </div>
               <span className="block text-white/90">Hi, I'm</span>
               <span className="block mt-2 bg-linear-to-r from-emerald-400 via-teal-400 to-cyan-400 text-transparent bg-clip-text">
                 Algin Jose C
@@ -272,13 +307,20 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <p className="text-lg text-white/70 leading-relaxed">
-                  With 2+ years of IT experience in frontend development, I specialize in building responsive, high-performance web applications that deliver exceptional user experiences.
+                  With 2+ years of IT experience in frontend development, I
+                  specialize in building responsive, high-performance web
+                  applications that deliver exceptional user experiences.
                 </p>
                 <p className="text-lg text-white/70 leading-relaxed">
-                  I'm proficient in modern web technologies including HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, ReactJS, and Next.js. My expertise extends to seamlessly integrating API endpoints with intuitive UIs.
+                  I'm proficient in modern web technologies including HTML5,
+                  CSS3, JavaScript, Bootstrap, Tailwind CSS, ReactJS, and
+                  Next.js. My expertise extends to seamlessly integrating API
+                  endpoints with intuitive UIs.
                 </p>
                 <p className="text-lg text-white/70 leading-relaxed">
-                  I thrive in Agile environments and am well-versed with version control systems, particularly Git, ensuring efficient collaboration and code management.
+                  I thrive in Agile environments and am well-versed with version
+                  control systems, particularly Git, ensuring efficient
+                  collaboration and code management.
                 </p>
               </div>
 
@@ -286,20 +328,26 @@ export default function App() {
                 <div className="p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
                   <MapPin className="w-8 h-8 text-emerald-400 mb-3" />
                   <h3 className="text-xl font-semibold mb-2">Location</h3>
-                  <p className="text-white/60">Kuzhithurai, Kanniyakumari District</p>
+                  <p className="text-white/60">
+                    Kuzhithurai, Kanniyakumari District
+                  </p>
                 </div>
 
                 <div className="p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
                   <Award className="w-8 h-8 text-teal-400 mb-3" />
                   <h3 className="text-xl font-semibold mb-2">Certifications</h3>
                   <p className="text-white/60">Python Full Stack Development</p>
-                  <p className="text-white/40 text-sm mt-1">Besant Technologies</p>
+                  <p className="text-white/40 text-sm mt-1">
+                    Besant Technologies
+                  </p>
                 </div>
 
                 <div className="p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10">
                   <Code className="w-8 h-8 text-cyan-400 mb-3" />
                   <h3 className="text-xl font-semibold mb-2">Languages</h3>
-                  <p className="text-white/60">English, Tamil, Malayalam (spoken)</p>
+                  <p className="text-white/60">
+                    English, Tamil, Malayalam (spoken)
+                  </p>
                 </div>
               </div>
             </div>
@@ -333,12 +381,16 @@ export default function App() {
                   className="relative pl-8 border-l-2 border-emerald-500/30"
                 >
                   <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-emerald-500" />
-                  
+
                   <div className="p-8 rounded-2xl bg-linear-to-br from-white/[0.07] to-white/2 backdrop-blur border border-white/10 hover:border-emerald-500/30 transition-all duration-300">
                     <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
                       <div>
-                        <h3 className="text-2xl font-bold text-white mb-2">{exp.company}</h3>
-                        <p className="text-emerald-400 font-medium">{exp.role}</p>
+                        <h3 className="text-2xl font-bold text-white mb-2">
+                          {exp.company}
+                        </h3>
+                        <p className="text-emerald-400 font-medium">
+                          {exp.role}
+                        </p>
                       </div>
                       <span className="px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-300 text-sm border border-emerald-500/20">
                         {exp.period}
@@ -351,15 +403,26 @@ export default function App() {
                           <div className="flex items-start gap-3">
                             <ExternalLink className="w-5 h-5 text-teal-400 mt-1 shrink-0" />
                             <div>
-                              <h4 className="text-xl font-semibold text-white mb-2">{project.name}</h4>
-                              <p className="text-white/40 text-sm mb-4">{project.tech}</p>
+                              <h4 className="text-xl font-semibold text-white mb-2">
+                                {project.name}
+                              </h4>
+                              <p className="text-white/40 text-sm mb-4">
+                                {project.tech}
+                              </p>
                               <ul className="space-y-2">
-                                {project.achievements.map((achievement, aIdx) => (
-                                  <li key={aIdx} className="flex items-start gap-3 text-white/60">
-                                    <span className="text-emerald-400 mt-1">▹</span>
-                                    <span>{achievement}</span>
-                                  </li>
-                                ))}
+                                {project.achievements.map(
+                                  (achievement, aIdx) => (
+                                    <li
+                                      key={aIdx}
+                                      className="flex items-start gap-3 text-white/60"
+                                    >
+                                      <span className="text-emerald-400 mt-1">
+                                        ▹
+                                      </span>
+                                      <span>{achievement}</span>
+                                    </li>
+                                  )
+                                )}
                               </ul>
                             </div>
                           </div>
@@ -399,12 +462,12 @@ export default function App() {
                   className="group relative p-8 rounded-3xl bg-linear-to-br from-white/8 to-white/2 backdrop-blur border border-white/10 hover:border-emerald-500/30 transition-all duration-300"
                 >
                   <div className="absolute inset-0 bg-linear-to-br from-emerald-500/10 to-teal-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  
+
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-4">
                       <Code className="w-10 h-10 text-emerald-400" />
                       {project.url && (
-                        <a 
+                        <a
                           href={`https://${project.url}`}
                           target="_blank"
                           rel="noreferrer"
@@ -415,15 +478,24 @@ export default function App() {
                       )}
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-3 text-white">{project.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3 text-white">
+                      {project.title}
+                    </h3>
                     {project.period && (
-                      <p className="text-emerald-400 text-sm mb-4">{project.period}</p>
+                      <p className="text-emerald-400 text-sm mb-4">
+                        {project.period}
+                      </p>
                     )}
-                    <p className="text-white/60 mb-6 leading-relaxed">{project.desc}</p>
+                    <p className="text-white/60 mb-6 leading-relaxed">
+                      {project.desc}
+                    </p>
 
                     <div className="space-y-2 mb-6">
                       {project.highlights.map((highlight, hIdx) => (
-                        <div key={hIdx} className="flex items-start gap-2 text-sm text-white/50">
+                        <div
+                          key={hIdx}
+                          className="flex items-start gap-2 text-sm text-white/50"
+                        >
                           <span className="text-teal-400">•</span>
                           <span>{highlight}</span>
                         </div>
@@ -472,7 +544,9 @@ export default function App() {
                   viewport={{ once: true }}
                   className="p-8 rounded-2xl bg-linear-to-br from-white/[0.07] to-white/2 backdrop-blur border border-white/10 hover:border-emerald-500/30 transition-all"
                 >
-                  <h3 className="text-2xl font-bold text-white mb-2">{edu.degree}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {edu.degree}
+                  </h3>
                   <p className="text-emerald-400 mb-2">{edu.institution}</p>
                   <div className="flex justify-between items-center text-sm">
                     <span className="text-white/40">{edu.period}</span>
@@ -510,7 +584,9 @@ export default function App() {
                   transition={{ delay: idx * 0.1 }}
                   className="p-8 rounded-2xl bg-linear-to-br from-white/[0.07] to-white/2 backdrop-blur border border-white/10"
                 >
-                  <h3 className="text-2xl font-bold mb-6 text-emerald-400">{category}</h3>
+                  <h3 className="text-2xl font-bold mb-6 text-emerald-400">
+                    {category}
+                  </h3>
                   <div className="flex flex-wrap gap-3">
                     {items.map((skill, sIdx) => (
                       <motion.span
@@ -567,7 +643,9 @@ export default function App() {
               >
                 <Mail className="w-10 h-10 text-teal-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="font-semibold mb-2">Email</h3>
-                <p className="text-white/60 text-sm break-all">alginjose7@gmail.com</p>
+                <p className="text-white/60 text-sm break-all">
+                  alginjose7@gmail.com
+                </p>
               </motion.a>
 
               <motion.a
@@ -588,7 +666,9 @@ export default function App() {
               className="p-6 rounded-2xl bg-linear-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/20"
             >
               <MapPin className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
-              <p className="text-white/80">Kuzhithurai, Kanniyakumari District, Tamil Nadu</p>
+              <p className="text-white/80">
+                Kuzhithurai, Kanniyakumari District, Tamil Nadu
+              </p>
             </motion.div>
           </motion.div>
         </div>
@@ -620,7 +700,8 @@ export default function App() {
       <footer className="relative py-8 px-6 border-t border-white/10 bg-black/50 backdrop-blur">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} Algin Jose C • Built with Next.js, Tailwind CSS & Framer Motion
+            © {new Date().getFullYear()} Algin Jose C • Built with Next.js,
+            Tailwind CSS & Framer Motion
           </p>
         </div>
       </footer>
